@@ -1,7 +1,7 @@
 #!/bin/bash
 #Juego de adivinar un numero
 
-#Variale Random
+#Variable Random
 numRandom=$RANDOM
 
 #Control de errores
