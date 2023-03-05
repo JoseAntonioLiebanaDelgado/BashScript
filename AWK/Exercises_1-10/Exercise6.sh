@@ -1,7 +1,7 @@
 #!/bin/bash
 #Fes un script que ens mostri els 1000 primers nombres primers.
 #Per fer aquest script aprofita l'anterior, i dissenya una funcio que ens digui#si un nombre és o no primer.
-#El professor ha d'explicar com fer una funció en BASH SCRIPT
+
 
 esPrimer(){
 primer=1
@@ -15,7 +15,7 @@ do
 done
 
 return $primer
-}
+
 
 numero=1
 recompte=0
