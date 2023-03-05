@@ -2,7 +2,6 @@
 #Fes un script que ens mostri els 1000 primers nombres primers.
 #Per fer aquest script aprofita l'anterior, i dissenya una funcio que ens digui#si un nombre és o no primer.
 
-
 esPrimer(){
 primer=1
 
