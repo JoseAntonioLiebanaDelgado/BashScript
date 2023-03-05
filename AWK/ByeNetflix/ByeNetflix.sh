@@ -1,11 +1,11 @@
 #!/bin/bash
 
-morosos=$(awk '$5=="no" {print $4}' usuaris.txt)
+morosos=$(awk '$5=="no" {print $4}' users.txt)
 
 for dni in $morosos; do
-	nom=$(cat usuaris.txt | grep $dni |awk '{print $1}')
-	cognom1=$(cat usuaris.txt | grep $dni |awk '{print $2}')
-	cognom2=$(cat usuaris.txt | grep $dni |awk '{print S3}')
+	nom=$(cat users.txt | grep $dni |awk '{print $1}')
+	cognom1=$(cat users.txt | grep $dni |awk '{print $2}')
+	cognom2=$(cat users.txt | grep $dni |awk '{print S3}')
 	
 	echo "A la atencio de $nom $cognom1 $cognom2." > $dni.txt
 	echo "" >> $dni.txt
