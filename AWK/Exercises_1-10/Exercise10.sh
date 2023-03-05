@@ -12,13 +12,13 @@
 # Guarda dins de llistaPID els processos que tenen a la columna 8
 # la paraula ping i després guarda el valor de la columna 2
 
-llistaPID=$(ps -ef | awk '$8=="ping" {print $2}')
+llistaPID=$(pgrep ping)
 
 numero=1
 echo "Pings actius a la maquina" > ping.txt
 
 for pid in $llistaPID; do
-	parametresAWK=$(ps -ef | awk '$2=="'$pid'" {print $2, $8, $9}')
+	parametresAWK=$(ps -o pid,args -p $pid | awk 'NR==2 {print $1, $2}')
 	echo "$numero $parametresAWK" >> ping.txt
 	numero=$((numero+1))
 done
@@ -28,5 +28,5 @@ cat ping.txt
 echo -n "Quin ping vols matar?: "
 read valor
 
-pid=$(awk '$1=="'$valor'" {print $2}' ping.txt)
-kill $pid
+pid=$(awk '$1=="'"$valor"'" {print $2}' ping.txt)
+kill "$pid"
