@@ -7,9 +7,9 @@
 
 primer=1
 
-for i in $(seq 2 $(($1-i)))
+for i in $(seq 2 $(($1-1)))
 do
-	if [ $(($1%$1)) -eq 0 ]; then
+	if [ $(($1%$i)) -eq 0 ]; then
 		primer=0
 		break
 	fi
