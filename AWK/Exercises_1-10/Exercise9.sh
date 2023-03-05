@@ -3,16 +3,19 @@
 # existeixi ens digui el propietari del mateix. El script ens demanarà un nou
 # directori, en cas que el que fiquem no existeixi.
 
-directori=a
+directori=""
 
-until [ -d $directori && -z $directori ]; do
-	echo -n "Fica el directori on vols busca: "
+until [ -d "$directori" ] || [ -z "$directori" ]; do
+	echo -n "Fica el directori on vols buscar: "
 	read directori	
 done
 
 echo -n "Fica el fitxer que vols buscar a $directori: "
 read fitxer
 
-if [ -f $directori/$fitxer ]; then
-	propietari=$(ls -l $directori/$fitxer | awk '{print $3}')
+if [ -f "$directori/$fitxer" ]; then
+	propietari=$(ls -l "$directori/$fitxer" | awk '{print $3}')
 	echo "El fitxer $fitxer està a dins del directori $directori i el seu propietari és $propietari"
+else
+	echo "El fitxer $fitxer no existeix dins del directori $directori."
+fi
