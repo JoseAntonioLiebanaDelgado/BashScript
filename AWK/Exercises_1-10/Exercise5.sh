@@ -7,7 +7,7 @@
 
 primer=1
 
-for i in $(seq 2 $(($1-1)))
+for i in $(seq 2 $(($1-i)))
 do
 	if [ $(($1%$1)) -eq 0 ]; then
 		primer=0
